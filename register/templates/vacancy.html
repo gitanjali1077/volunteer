@@ -1,0 +1,21 @@
+
+
+{% for  val in posts %}
+
+  <a href="{%url 'detail' oid=val.id %}">  {{ val.title }}</a><br>
+
+    {{ val.city }}<br>
+
+    {{ val.posted_on }}<br>
+
+    {{ val.last_date }} <br>
+
+<a href="{% url 'post_update' oid=val.id %}">update</a>
+<a href="{% url 'post_delete' oid=val.id %}"> delete</a>
+<br>
+<br>
+<br>
+<br>
+
+
+{% endfor %}

@@ -1,0 +1,27 @@
+
+
+{% block content %}
+  <h2>Admin Panel</h2>
+  <form method="post"  enctype="multipart/form-data">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+ {% for field in admin_form %}
+    <div class="form-group" >
+             <div class=" col-sm-offset-2 col-sm-10">
+ <!---     <span class="text-danger small">{{ field.errors}}
+</span>   -->
+</div>
+   <label class="control-label ">{{ field.label_tag }} </label>
+     <div class=""> {{ field }} </div>
+
+
+   
+
+</div>
+
+
+{% endfor %}
+    <button type="submit"> Login</button>
+  </form>
+{% endblock %}

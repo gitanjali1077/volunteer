@@ -1,0 +1,28 @@
+
+
+{% block content %}
+  <h2>Profile</h2>
+  <form method="post"  enctype="multipart/form-data">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+ {% for field in profile_form %}
+    <div class="form-group" >
+             <div class=" col-sm-offset-2 col-sm-10">
+ <!---     <span class="text-danger small">{{ field.errors}}
+</span>   -->
+</div>
+   <label class="control-label ">{{ field.label_tag }} </label>
+     <div class=""> {{ field }} </div>
+
+
+   
+
+</div>
+
+
+{% endfor %}
+<a href="{%url 'logout' %}">Logout</a>
+    <button type="submit">Create profile</button>
+  </form>
+{% endblock %}

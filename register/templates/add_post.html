@@ -1,0 +1,16 @@
+{% block content %}
+{{msgs}}
+  <h2>Add New Post</h2>
+  <form method="post">
+    {% csrf_token %}
+      {% for field in post_form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+      </p>
+      {% endfor %}
+    <button type="submit">{{button}}</button>
+  </form>
+{% endblock %}
+
+
